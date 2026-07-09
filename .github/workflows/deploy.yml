@@ -22,7 +22,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '21'
-          distribution: 'corretto'
+          distribution: 'temurin'
+          cache: 'maven'
 
       - name: Maven 실행 권한 부여
         run: chmod +x ./mvnw
@@ -38,7 +39,6 @@ jobs:
           # GitHub이 자동으로 발급해주는 임시 토큰 사용
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # ★ 주의: 팀장님의 GitHub 아이디를 소문자로 적어주세요! (예: chosun-nhn29)
       # docker build & push 과정
       - name: Docker 이미지 빌드 및 GHCR에 업로드
         run: |
