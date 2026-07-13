@@ -1,5 +1,11 @@
 spring:
   application:
     name: 4iren-eureka
-server:
-  port: 8761
+
+# 이중화 설정
+eureka:
+  client:
+    # 서로 등록하도록 설정
+    register-with-eureka: true
+    # 서로 동기화하도록 설정
+    fetch-registry: true
