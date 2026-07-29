@@ -79,4 +79,4 @@ jobs:
             - 타깃 브랜치: `${{ github.base_ref }}`
             - 분석 결과: `${{ job.status }}`
 
-            📊 [**👉 소나큐브 상세 리포트 확인하러 가기**](${{ secrets.SONAR_HOST_URL }}/dashboard?id=4iren-eureka)
+            📊 [**👉 소나큐브 상세 리포트 확인하러 가기**](${{ secrets.SONAR_HOST_URL }}/dashboard?id=4iren-eureka&codeScope=overall)
