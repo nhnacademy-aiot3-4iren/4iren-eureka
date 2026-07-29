@@ -52,7 +52,7 @@ jobs:
       - name: 소나큐브 분석 (Develop 브랜치 - 통과 허용)
         if: github.base_ref == 'develop'
         run: >
-          ./mvnw sonar:sonar 
+          ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar 
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} 
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.projectKey=4iren-eureka
@@ -60,7 +60,7 @@ jobs:
       - name: 소나큐브 분석 (Main 브랜치 - 커버리지 미달 시 차단)
         if: github.base_ref == 'main'
         run: >
-          ./mvnw sonar:sonar 
+          ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar 
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} 
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.projectKey=4iren-eureka
