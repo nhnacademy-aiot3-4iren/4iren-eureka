@@ -79,4 +79,6 @@ jobs:
             - 타깃 브랜치: `${{ github.base_ref }}`
             - 분석 결과: `${{ job.status }}`
 
-            📊 [**👉 소나큐브 상세 리포트 확인하러 가기**](${{ secrets.SONAR_HOST_URL }}/dashboard?id=4iren-eureka&codeScope=overall)
+            📊 **소나큐브 상세 리포트 확인하러 가기**
+            - 🏢 [**내부망(학원)에서 접속 시 클릭**](http://10.116.64.14:9000/dashboard?id=4iren-eureka&codeScope=overall)
+            - 🏠 [**외부망(집)에서 접속 시 클릭**](<${{ secrets.SONAR_HOST_URL }}/dashboard?id=4iren-eureka>)
