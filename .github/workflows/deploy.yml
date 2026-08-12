@@ -82,7 +82,7 @@ jobs:
 
           echo "1번 서버 헬스체크 시작..."
           for i in {1..20}; do
-            STATUS=$(docker exec ${{ env.IMAGE_NAME }}-1 wget -qO- http://localhost:8080/actuator/health 2>/dev/null | grep '"status":"UP"' || true)
+            STATUS=$(docker exec ${{ env.IMAGE_NAME }}-1 wget -qO- http://localhost:8761/actuator/health 2>/dev/null | grep '"status":"UP"' || true)
             if [ -n "$STATUS" ]; then
               echo "1번 서버 구동 완료!"
               break
@@ -104,7 +104,7 @@ jobs:
 
           echo "2번 서버 헬스체크 시작..."
           for i in {1..20}; do
-            STATUS=$(docker exec ${{ env.IMAGE_NAME }}-2 wget -qO- http://localhost:8080/actuator/health 2>/dev/null | grep '"status":"UP"' || true)
+            STATUS=$(docker exec ${{ env.IMAGE_NAME }}-2 wget -qO- http://localhost:8762/actuator/health 2>/dev/null | grep '"status":"UP"' || true)
             if [ -n "$STATUS" ]; then
               echo "2번 서버 구동 완료!"
               break
