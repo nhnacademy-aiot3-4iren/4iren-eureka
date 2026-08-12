@@ -9,6 +9,8 @@ eureka:
     register-with-eureka: true
     # 서로 동기화하도록 설정
     fetch-registry: true
+  instance:
+    prefer-ip-address: true
 
 # 관리 엔드포인트 설정
 management:
